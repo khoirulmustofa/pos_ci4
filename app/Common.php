@@ -13,3 +13,8 @@
  *
  * @see: https://codeigniter4.github.io/CodeIgniter4/
  */
+
+function cart(bool $getShared = true)
+{
+    return \Config\Services::cart($getShared);
+}

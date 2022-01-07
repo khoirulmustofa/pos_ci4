@@ -49,44 +49,11 @@
                                         <th>Jumlah</th>
                                         <th>Harga</th>
                                         <th>Total</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>183</td>
-                                        <td>Indomie Soto Ayam</td>
-                                        <td>10</td>
-                                        <td>5.000</td>
-                                        <td>50.0000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>183</td>
-                                        <td>Indomie Soto Ayam</td>
-                                        <td>10</td>
-                                        <td>5.000</td>
-                                        <td>50.0000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>183</td>
-                                        <td>Indomie Soto Ayam</td>
-                                        <td>10</td>
-                                        <td>5.000</td>
-                                        <td>50.0000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>183</td>
-                                        <td>Indomie Soto Ayam</td>
-                                        <td>10</td>
-                                        <td>5.000</td>
-                                        <td>50.0000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>183</td>
-                                        <td>Indomie Soto Ayam</td>
-                                        <td>10</td>
-                                        <td>5.000</td>
-                                        <td>50.0000</td>
-                                    </tr>
+                                <tbody id="detail_cart">
+
                                 </tbody>
                             </table>
                         </div>
@@ -106,13 +73,13 @@
                         <div class="card-body p-2">
                             <div class="form-group">
                                 <h3>Total Bayar :</h3>
-                                <h1><strong>57.000</strong></h1>
+                                <h1><strong id="total_bayar">0</strong></h1>
                                 <hr>
                                 <h3>Total Item :</h3>
-                                <h1><strong>5</strong></h1>
+                                <h1><strong id="total_item">0</strong></h1>
                             </div>
                             <div class="form-group">
-                                <button type="button" class="btn btn-block btn-success btn-lg"><i class="fas fa-money-check-alt"></i> BAYAR / F2</button>
+                                <button type="button" onclick="btn_bayar()" class="btn btn-block btn-success btn-lg"><i class="fas fa-money-check-alt"></i> BAYAR / F2</button>
                             </div>
 
                         </div>
@@ -122,4 +89,40 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="modal_edit_cart">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Default Modal</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label>Nama Produk</label>
+                            <input type="text" name="nama_produk" class="form-control" placeholder="Masukan Nama Produk" disabled>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-group">
+                            <label>Jumlah</label>
+                            <input type="number" name="qty" min="1" class="form-control" placeholder="Masukan Jumlah Barang">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
 <?= $this->endSection() ?>
